@@ -1,3 +1,7 @@
+const NODE_TYPES = {
+  TEXT: "TEXT_NODE",
+};
+
 const createNode = (type, props, ...children) => {
   return {
     type,
@@ -7,7 +11,7 @@ const createNode = (type, props, ...children) => {
         const isTextNode = typeof child !== "object";
 
         // deal with text type
-        return isTextNode ? createTextNode(child) : child;
+        return isTextNode ? Ryact.createTextNode(child) : child;
       }),
     },
   };
@@ -15,7 +19,7 @@ const createNode = (type, props, ...children) => {
 
 const createTextNode = (text) => {
   return {
-    type: "TEXT_NODE",
+    type: NODE_TYPES.TEXT,
     props: {
       nodeValue: text,
       children: [],
@@ -23,8 +27,29 @@ const createTextNode = (text) => {
   };
 };
 
+const render = (element, container) => {
+  const dom =
+    element.type == NODE_TYPES.TEXT
+      ? document.createTextNode("")
+      : document.createElement(element.type);
+
+  const isProperty = (key) => key !== "children";
+
+  Object.keys(element.props)
+    .filter(isProperty)
+    .forEach((name) => {
+      dom[name] = element.props[name];
+    });
+
+  element.props.children.forEach((child) => render(child, dom));
+
+  container.appendChild(dom);
+};
+
 const Ryact = {
   createNode,
+  createTextNode,
+  render,
 };
 
 const element = {
@@ -37,15 +62,10 @@ const element = {
 
 const container = document.getElementById("root");
 
-// Create the node
-const node = document.createElement(element.type);
-node["title"] = element.props.title;
+const root = Ryact.createNode(
+  element.type,
+  element.props.title,
+  element.props.children,
+);
 
-// Use the correct method to create a text node
-const text = document.createTextNode(element.props.children); // Fixed here
-
-// Append the text node to the created element
-node.appendChild(text);
-
-// Append the node to the container
-container.appendChild(node);
+Ryact.render(root, container);
