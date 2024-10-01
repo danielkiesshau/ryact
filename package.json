@@ -1,0 +1,24 @@
+{
+  "name": "ryact",
+  "version": "1.0.0",
+  "description": "simplified JSX rendered based on react (study purposes)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/danielkiesshau/ryact.git"
+  },
+  "keywords": [
+    "react",
+    "javscript",
+    "dk"
+  ],
+  "author": "Daniel Kiesshau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielkiesshau/ryact/issues"
+  },
+  "homepage": "https://github.com/danielkiesshau/ryact#readme"
+}
