@@ -4,7 +4,7 @@ simplified JSX renderer based on react (for study purposes,also I am calling it 
 
 # Features of "Ryact"
 
-1. `createElement()`, `createTextElement()`
+1. [`createNode()`](https://react.dev/reference/react/createElement), `createTextNode()`
 2. [component Reconciliation](https://legacy.reactjs.org/docs/reconciliation.html) (add or update components to DOM)
 3. [Fiber](https://github.com/acdlite/react-fiber-architecture) (used to chunk rendering components and unblock main JS thread)
 4. [Functional Components](https://legacy.reactjs.org/docs/components-and-props.html#:~:text=on%20the%20screen.-,Function,-and%20Class%20Components)
