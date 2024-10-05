@@ -22,7 +22,7 @@ It was implemented using _Functional Components_ and an _useState_ hook
 
 # To test changes
 
-1. `npm i -g live-server` [live-sever](https://www.npmjs.com/package/live-server)
+1. `npm i -g live-server` [live-server](https://www.npmjs.com/package/live-server)
 2. start the live-server in your terminal: `live-server`
 3. open [http://localhost:8080/src/index.html](http://localhost:8080/src/index.html)
 4. explore the source code making changes to it
