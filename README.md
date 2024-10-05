@@ -1,6 +1,6 @@
 # Ryact
 
-simplified JSX renderer based on react (study purposes - I am calling it Ryact)
+simplified JSX renderer based on react (for study purposes,also I am calling it Ryact)
 
 # Features of "Ryact"
 
